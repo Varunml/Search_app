@@ -71,7 +71,7 @@ export const RegisterUser = async (req, res, next) => {
   try {
     // console.log(req.body);
     const { email, password, name } = req.body;
-
+    // Added business logic
     if (!password || !name) {
       throw new Error("Please enter the Password and Email");
     }
