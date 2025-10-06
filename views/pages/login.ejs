@@ -1,0 +1,25 @@
+<main class="login-page">
+  <h2>Login</h2>
+
+  <!-- Login form -->
+  <form action="/users/login" method="POST">
+    <!-- Email field -->
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <!-- Password field -->
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+  
+
+    <!-- Submit button -->
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Link to signup page -->
+  <p>Don’t have an account? <a href="/users/signup">Sign up here</a></p>
+</main>
