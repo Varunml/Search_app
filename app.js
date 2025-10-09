@@ -5,7 +5,9 @@ import { fileURLToPath } from "url";
 import "dotenv/config";
 import userRoutes from "./routes/userRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js";
+import authenticateJwt from "./middleware/authenticateJwt.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
+import cookieParser from "cookie-parser";
 // console.log("userRoutes:", userRoutes);
 
 //set view
@@ -16,10 +18,12 @@ app.set("views", path.join(__dirname, "views"));
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser()); 
 
 //routes
 app.use("/users", userRoutes);
 app.use("/search", searchRoutes);
+app.use(authenticateJwt);
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

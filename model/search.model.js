@@ -37,3 +37,4 @@ export const toggleFavourite = async (search_id, currentValue) => {
 
   //   const {is_favourite} = req.body;
 };
+
